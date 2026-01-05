@@ -1,0 +1,24 @@
+import random
+
+def gerar_senha():
+    maiusculas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    minusculas = "abcdefghijklmnopqrstuvwxyz"
+    numeros = "0123456789"
+    especiais = "!@#$%&*"
+
+    senha = [
+        random.choice(maiusculas),
+        random.choice(minusculas),
+        random.choice(numeros),     
+        random.choice(especiais)
+    ]
+
+    todosCaracteres = maiusculas + minusculas + numeros + especiais
+    senha.extend(random.choices(todosCaracteres, k=8))
+    random.shuffle(senha)
+    return ''.join(senha)
+
+print(f"Senha gerada: {gerar_senha()}")
+
+
+    
